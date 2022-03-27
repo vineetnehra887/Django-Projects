@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+Hello, {{ user.username |default:'Guest' }}!
+<p>This is the best website on this planet and you are very lucky to access it</p>
+<div>
+    {% if user.is_authenticated %}
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    {% endif %}
+</div>
+
+    
+{% endblock %}
