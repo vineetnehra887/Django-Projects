@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container" style="  background-color: steelblue;
+color: #fff;
+font-family: 'Muli', sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+overflow: hidden;
+margin: 0;">
+<h1>Please Login</h1>
+<form method="POST">
+{% csrf_token %}
+    <div class="form-group">
+
+	    <input type="text" class="form-control" placeholder="Enter Username" name = "username">
+
+	  </div>
+      <br>
+	  <div class="form-group">
+	    <input type="password" class="form-control"  placeholder="Enter Password" name="password"> 
+	  </div>
+	 <br>
+
+	  <button type="submit" class="btn btn-secondary">Login</button>
+        <p class="text">Don't have an account? <a href="/register">Register</a> </p>
+    </div>
+</form>
+</div>
+ 
+{% endblock %}
